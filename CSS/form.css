@@ -1,0 +1,71 @@
+.form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 10px;
+    font-weight: 400;
+}
+
+.form__fieldSet {
+    border-radius: 20px;
+    background-color: white;
+    background-image: url("https://cdn.pixabay.com/photo/2016/11/11/10/41/forex-1816354_960_720.jpg");
+    background-repeat: no-repeat;
+    background-position: bottom 40% right;
+    background-size: 200px;
+    border-color: gold;
+    margin: 5px;
+    padding: 5px;
+    border-width: 3px;
+}
+
+.form__legend {
+    padding: 10px;
+    background-color: hsl(51, 100%, 60%);
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 10px;
+}
+
+.form__paragraph {
+    padding: 20px 10px;
+    margin: 0px auto;
+}
+.form__paragraph--position {
+    padding: 0px 10px;
+}
+
+.form__required {
+    color: red;
+    font-weight: bold;
+}
+
+.form__sum {
+    padding: 7px;
+    max-width: 150px;
+    border-radius: 10px;
+}
+
+.form__sum:required {
+    background-color: hsl(0, 100%, 95%);
+}
+
+.form__submit {
+    background-color: hsl(51, 100%, 50%);
+    padding: 5px;
+    margin: 10px auto;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 0px;
+    width: 100%;
+    text-align: center;
+}
+
+.form__submit:hover {
+    background-color: hsl(51, 100%, 60%);
+}
+
+.form__submit:active {
+    background-color: hsl(51, 100%, 70%);
+}

@@ -1,0 +1,15 @@
+.header {
+    background-color: gold;
+}
+
+.header__mainHeader {
+    padding: 10px;
+    margin: 0px;
+    text-align: center;
+    border-top: 2px;
+    border-right: 0px;
+    border-bottom: 2px;
+    border-left: 0px;
+    border-color: black;
+    border-style: solid;
+}

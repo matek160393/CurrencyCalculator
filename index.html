@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Walut</title>
+    <link rel="icon" href="IMAGES/iconCurrency.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="CSS/style.css" rel="stylesheet">
+    <link href="CSS/form.css" rel="stylesheet">
+    <link href="CSS/header.css" rel="stylesheet">
+    <link href="CSS/footer.css" rel="stylesheet">
+    <link href="CSS/main.css" rel="stylesheet">
+    <script defer src="JS/script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+    <header class="header">
+        <h1 class="header__mainHeader">Kantor</h1>
+    </header>
+    <main class="main">
+        <form class="form js-form">
+            <fieldset class="form__fieldSet">
+                <legend class="form__legend">Kalkulator Walut</legend>
+                <p class="form__paragraph">Pole wymagane oznaczone <span class="form__required">*</span></p>
+                <p class="form__paragraph">
+                    <labael>
+                        <span> Kwota w PLN</span> <span class="form__required">*</span> : <input required
+                            class="form__sum js-form__sum" type="number" min="1">
+
+                    </labael>
+                </p>
+
+                <p class="form__paragraph">
+                    <label>
+                        Przelicz na:
+                        <select class="form__currency js-form__currency">
+                            <option value="EUR">Euro(EUR)</option>
+                            <option value="CZK">Korona Czeska(CZK)</option>
+                        </select>
+                    </label>
+                </p>
+                <p class="form__paragraph">Kurs : <strong class="js-form__exchange
+                "></strong></p>
+
+
+                <p class="form__paragraph form__paragraph--position">kwota po przewalutowaniu : <strong
+                        class="form__result js-form__result">N/A</strong>
+                </p>
+                <button class="form__submit" type="submit">Przelicz</button>
+            </fieldset>
+
+        </form>
+    </main>
+    <footer class="footer">
+        <p class="footer__paragraph">kalkulator walut stworzony na potrzeby kursu YouCode, projektował<strong> Mateusz
+                Grincewicz</strong>.</p>
+
+    </footer>
+
+
+</body>
+
+</html>
