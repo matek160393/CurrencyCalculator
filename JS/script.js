@@ -1,28 +1,36 @@
-let formElement = document.querySelector(".js-form");
-let sumElement = document.querySelector(".js-form__sum");
-let currencyElement = document.querySelector(".js-form__currency");
-let resultElement = document.querySelector(".js-form__result");
-let exchangeElement = document.querySelector(".js-form__exchange");
-let exchangeEUR = 0.22;
-let exchangeCZK = 5.57;
+{
+    const formElement = document.querySelector(".js-form");
+    const sumElement = document.querySelector(".js-form__sum");
+    const currencyElement = document.querySelector(".js-form__currency");
+    const resultElement = document.querySelector(".js-form__result");
+    const exchangeElement = document.querySelector(".js-form__exchange");
 
-formElement.addEventListener("submit", (event) => {
-    event.preventDefault();
 
-    switch (currencyElement.value) {
-        case "EUR":
-            EUR = sumElement.value * 0.22;
-            resultElement.innerText = EUR.toFixed(2);
-            exchangeElement.innerText = exchangeEUR;
-            break;
-        case "CZK":
-            CZK = sumElement.value * 5.57;
-            resultElement.innerText = CZK.toFixed(2);
-            exchangeElement.innerText = exchangeCZK;
-            break;
+    const resultCalculation = () => {
+        const exchangeEUR = 0.22;
+        const exchangeCZK = 5.57;
 
+        switch (currencyElement.value) {
+            case "EUR":
+                EUR = sumElement.value * 0.22;
+                resultElement.innerText = EUR.toFixed(2);
+                exchangeElement.innerText = exchangeEUR;
+                break;
+            case "CZK":
+                CZK = sumElement.value * 5.57;
+                resultElement.innerText = CZK.toFixed(2);
+                exchangeElement.innerText = exchangeCZK;
+                break;
+        }
     }
+   
+
+    formElement.addEventListener("submit", (event) => {
+        event.preventDefault();
+        resultCalculation();
 
 
 
-});
+    });
+
+}
