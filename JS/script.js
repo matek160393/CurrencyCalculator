@@ -1,36 +1,37 @@
 {
-    const formElement = document.querySelector(".js-form");
-    const sumElement = document.querySelector(".js-form__sum");
-    const currencyElement = document.querySelector(".js-form__currency");
-    const resultElement = document.querySelector(".js-form__result");
-    const exchangeElement = document.querySelector(".js-form__exchange");
-
-
-    const resultCalculation = () => {
+    const resultCalculation = (sumElement, currencyElement) => {
         const exchangeEUR = 0.22;
         const exchangeCZK = 5.57;
 
         switch (currencyElement.value) {
             case "EUR":
-                EUR = sumElement.value * 0.22;
-                resultElement.innerText = EUR.toFixed(2);
-                exchangeElement.innerText = exchangeEUR;
-                break;
+                return sumElement * exchangeEUR;
             case "CZK":
-                CZK = sumElement.value * 5.57;
-                resultElement.innerText = CZK.toFixed(2);
-                exchangeElement.innerText = exchangeCZK;
-                break;
-        }
-    }
-   
+                return sumElement * exchangeCZK;
+        };
+    };
+    const updateResultText = (sumElement, resultElement, currencyElement) => {
+        const resultElement = document.querySelector(".js-form__result");
+        resultElement.innertext = `${sumElement.tofixed(2)} PLN = ${resultElement.tofixed(2)} ${currencyElement} `;
 
-    formElement.addEventListener("submit", (event) => {
+    };
+    const onFormSubmit = (event) => {
         event.preventDefault();
-        resultCalculation();
 
+        const sumElement = document.querySelector(".js-form__sum");
+        const currencyElement = document.querySelector(".js-form__currency");
 
+        const sum = +sumElement.value;
+        const currency = currencyElement.value;
 
-    });
+        const result = resultCalculation(sum, currency);
 
-}
+        updateResultText(sum, currency, result);
+    };
+    const init = () => {
+        const formElement = document.querySelector(".js-form");
+        formElement.addEventListener("submit", onFormSubmit);
+
+    };
+    init();
+};
