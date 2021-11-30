@@ -1,7 +1,8 @@
 {
+    const exchangeEUR = 0.22;
+    const exchangeCZK = 5.57;
+
     const resultCalculate = (sum, currency,) => {
-        const exchangeEUR = 0.22;
-        const exchangeCZK = 5.57;
 
         switch (currency) {
             case "EUR":
@@ -9,6 +10,19 @@
             case "CZK":
                 return sum * exchangeCZK;
         };
+    };
+
+    const displayCourse = (currency) => {
+        switch (currency) {
+            case "EUR":
+                return exchangeEUR;
+            case "CZK":
+                return exchangeCZK;
+        };
+    };
+    const UpdateCourseText = (resultExchange) => {
+        const Exchange = document.querySelector(".js-form__exchange");
+        Exchange.innerText = `${resultExchange}`;
     };
 
     const updateResultText = (result, sum, currency,) => {
@@ -26,8 +40,10 @@
         const currency = currencyElement.value;
 
         const result = resultCalculate(sum, currency,);
+        const resultExchange = displayCourse(currency);
 
         updateResultText(result, sum, currency,);
+        UpdateCourseText(resultExchange);
     };
     const init = () => {
         const formElement = document.querySelector(".js-form");
